@@ -88,7 +88,13 @@ public class Card : MonoBehaviour {
 			back.SetActive(!value);
 		}
 	}
-} // class Card
+
+    // Virtual methods can be overridden by subclass methods with the same name
+    virtual public void OnMouseUpAsButton()
+    {
+        print(name); // When clicked, this outputs the card name
+    }
+}
 
 [System.Serializable]
 public class Decorator{
