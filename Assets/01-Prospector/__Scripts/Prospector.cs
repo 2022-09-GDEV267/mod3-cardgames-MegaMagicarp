@@ -68,7 +68,7 @@ public class Prospector : MonoBehaviour
     // LayoutGame() positions the initial tableau of cards, a.k.a. the "mine"
     void LayoutGame()
     {
-        // Create an empty GameObject to serve as an anchor for the tableau // a
+        // Create an empty GameObject to serve as an anchor for the tableau
         if (layoutAnchor == null)
         {
             GameObject tGO = new GameObject("_LayoutAnchor");
@@ -95,7 +95,10 @@ public class Prospector : MonoBehaviour
             cp.slotDef = tSD;
             // CardProspectors in the tableau have the state CardState.tableau
             cp.state = eCardState.tableau;
-            tableau.Add(cp); // Add this CardProspector to the List<> tableau    
+            tableau.Add(cp); // Add this CardProspector to the List<> tableau
+            // CardProspectors in the tableau have the state CardState.tableau
+            cp.SetSortingLayerName(tSD.layerName); // Set the sorting layers
+
         }
     }
 }
