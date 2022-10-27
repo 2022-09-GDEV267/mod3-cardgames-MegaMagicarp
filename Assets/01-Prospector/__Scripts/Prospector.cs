@@ -19,6 +19,7 @@ public class Prospector : MonoBehaviour
     public Vector2 fsPosRun = new Vector2(0.5f, 0.75f);
     public Vector2 fsPosMid2 = new Vector2(0.4f, 1.0f);
     public Vector2 fsPosEnd = new Vector2(0.5f, 0.95f);
+    public float reloadDelay = 2f;// 2 sec delay between rounds
 
     [Header("Set Dynamically")]
 	public Deck deck;
@@ -316,10 +317,19 @@ public class Prospector : MonoBehaviour
             ScoreManager.EVENT(eScoreEvent.gameLoss);
             FloatingScoreHandler(eScoreEvent.gameLoss);
         }
+        Invoke("ReloadLevel", reloadDelay);
+    }
 
-        // Reload the scene, resetting the game
-        SceneManager.LoadScene("__Prospector_Scene_0");
+
+    void ReloadLevel()
+    {
+
+        // Reload the scene, resetting the game
+
+        SceneManager.LoadScene("__Prospector_Scene_0");
+
     }
+
 
     // Return true if the two cards are adjacent in rank (A & K wrap around)
     public bool AdjacentRank(CardProspector c0, CardProspector c1)
