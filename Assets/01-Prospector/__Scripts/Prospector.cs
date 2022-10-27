@@ -6,7 +6,6 @@ using System.Collections.Generic;
 
 public class Prospector : MonoBehaviour 
 {
-
 	static public Prospector 	S;
 
 	[Header("Set in Inspector")]
@@ -140,11 +139,10 @@ public class Prospector : MonoBehaviour
             // ^ Set the localPosition of the card based on slotDef
             cp.layoutID = tSD.id;
             cp.slotDef = tSD;
+            cp.SetSortingLayerName(tSD.layerName); // Set the sorting layers
             // CardProspectors in the tableau have the state CardState.tableau
             cp.state = eCardState.tableau;
             tableau.Add(cp); // Add this CardProspector to the List<> tableau
-            // CardProspectors in the tableau have the state CardState.tableau
-            cp.SetSortingLayerName(tSD.layerName); // Set the sorting layers
         }
 
         // Set which cards are hiding others

@@ -41,16 +41,16 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Row 0
+  - name: Row0
     uniqueID: 3041786513
     locked: 0
-  - name: Row 1
+  - name: Row1
     uniqueID: 3068247117
     locked: 0
-  - name: Row 2
+  - name: Row2
     uniqueID: 42850177
     locked: 0
-  - name: Row 3
+  - name: Row3
     uniqueID: 2863958545
     locked: 0
   - name: Discard
