@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6500000}
   - component: {fileID: 3959056537206592988}
   m_Layer: 0
-  m_Name: PrefabCard Pyramid
+  m_Name: PrefabCardPyramid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
