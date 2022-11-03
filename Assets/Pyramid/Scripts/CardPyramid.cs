@@ -11,13 +11,14 @@ namespace Pyramid
         drawpile,
         tableau,
         target,
-        discard
+        discard,
+
     }
 
     public class CardPyramid : Card
     { // Make sure CardProspector extends Card
 
-        [Header("Set Dynamically: CardProspector")]
+        [Header("Set Dynamically: CardPyramid")]
 
         // This is how you use the enum eCardState
         public ePyramidCardState state = ePyramidCardState.drawpile;

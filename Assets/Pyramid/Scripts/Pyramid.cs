@@ -32,7 +32,7 @@ namespace Pyramid
         public CardPyramid target;
         public List<CardPyramid> tableau;
         public List<CardPyramid> discardPile;
-        public FloatingScore fsRun;
+        //public FloatingScore fsRun;
 
         void Awake()
         {
@@ -74,11 +74,11 @@ namespace Pyramid
         }
         */
 
-        void ShowResultsUI(bool show)
-        {
-            gameOverText.gameObject.SetActive(show);
-            roundResultText.gameObject.SetActive(show);
-        }
+        //void ShowResultsUI(bool show)
+        //{
+        //    gameOverText.gameObject.SetActive(show);
+        //    roundResultText.gameObject.SetActive(show);
+        //}
 
         void Start()
         {
@@ -280,8 +280,8 @@ namespace Pyramid
                     MoveToDiscard(target); // Moves the target to the discardPile
                     MoveToTarget(Draw());  // Moves the next drawn card to the target
                     UpdateDrawPile();     // Restacks the drawPile
-                    ScoreManager.EVENT(eScoreEvent.draw);
-                    FloatingScoreHandler(eScoreEvent.draw);
+                    //ScoreManager.EVENT(eScoreEvent.draw);
+                    //FloatingScoreHandler(eScoreEvent.draw);
                     break;
 
                 case ePyramidCardState.tableau:
@@ -293,7 +293,7 @@ namespace Pyramid
                         validMatch = false;
                     }
 
-                    if (!AdjacentRank(cd, target))
+                    if (!Add13(cd, target))
                     {
                         // If it's not an adjacent rank, it's not valid
                         validMatch = false;
@@ -303,8 +303,8 @@ namespace Pyramid
                     tableau.Remove(cd); // Remove it from the tableau List
                     MoveToTarget(cd);  // Make it the target card
                     SetTableauFaces();  // Update tableau card face-ups
-                    ScoreManager.EVENT(eScoreEvent.mine);
-                    FloatingScoreHandler(eScoreEvent.mine);
+                    //ScoreManager.EVENT(eScoreEvent.mine);
+                    //FloatingScoreHandler(eScoreEvent.mine);
                     break;
             }
             // Check to see whether the game is over or not
@@ -331,7 +331,7 @@ namespace Pyramid
             // Check for remaining valid plays
             foreach (CardPyramid cd in tableau)
             {
-                if (AdjacentRank(cd, target))
+                if (Add13(cd, target))
                 {
                     // If there is a valid play, the game's not over
                     return;
@@ -346,36 +346,36 @@ namespace Pyramid
         // Called when the game is over. Simple for now, but expandable
         void GameOver(bool won)
         {
-            int score = ScoreManager.SCORE;
+            //int score = ScoreManager.SCORE;
 
-            if (fsRun != null) score += fsRun.score;
+            //if (fsRun != null) score += fsRun.score;
 
-            if (won)
-            {
-                gameOverText.text = "Round Over";
-                roundResultText.text = "You won this round!\nRound Score: " + score;
-                ShowResultsUI(true);
-                ScoreManager.EVENT(eScoreEvent.gameWin);
-                FloatingScoreHandler(eScoreEvent.gameWin);
-            }
-            else
-            {
-                gameOverText.text = "Game Over";
+            //if (won)
+            //{
+                //gameOverText.text = "Round Over";
+               // roundResultText.text = "You won this round!\nRound Score: " + score;
+               // ShowResultsUI(true);
+                //ScoreManager.EVENT(eScoreEvent.gameWin);
+                //FloatingScoreHandler(eScoreEvent.gameWin);
+           // }
+            //else
+            //{
+                //gameOverText.text = "Game Over";
 
-                if (ScoreManager.HIGH_SCORE <= score)
-                {
-                    string str = "You got the high score!\nHigh score: " + score;
-                    roundResultText.text = str;
-                }
-                else
-                {
-                    roundResultText.text = "Your final score was: " + score;
-                }
+                //if (ScoreManager.HIGH_SCORE <= score)
+                //{
+                    //string str = "You got the high score!\nHigh score: " + score;
+                   // roundResultText.text = str;
+                //}
+               // else
+                //{
+                   // roundResultText.text = "Your final score was: " + score;
+                //}
 
-                ShowResultsUI(true);
-                ScoreManager.EVENT(eScoreEvent.gameLoss);
-                FloatingScoreHandler(eScoreEvent.gameLoss);
-            }
+                //ShowResultsUI(true);
+                //ScoreManager.EVENT(eScoreEvent.gameLoss);
+                //FloatingScoreHandler(eScoreEvent.gameLoss);
+           // }
 
             // Reload the scene in reloadDelay seconds
             // This will give the score a moment to travel
@@ -385,31 +385,30 @@ namespace Pyramid
         void ReloadLevel()
         {
             // Reload the scene, resetting the game
-            SceneManager.LoadScene("__Prospector");
+            SceneManager.LoadScene("Pyramid");
         }
 
         // Return true if the two cards are adjacent in rank (A & K wrap around)
-        public bool AdjacentRank(CardPyramid c0, CardPyramid c1)
+        public bool Add13(CardPyramid c0, CardPyramid c1)
         {
             // If either card is face-down, it's not adjacent.
             if (!c0.faceUp || !c1.faceUp) return (false);
 
             // If they are 1 apart, they are adjacent
-            if (Mathf.Abs(c0.rank - c1.rank) == 1)
+            if (Mathf.Abs(c0.rank + c1.rank) == 13)
             {
                 return (true);
             }
 
             // If one is Ace and the other King, they are adjacent
-            if (c0.rank == 1 && c1.rank == 13) return (true);
-
-            if (c0.rank == 13 && c1.rank == 1) return (true);
+            if (c0.rank == 13) return (true);
 
             // Otherwise, return false
             return (false);
         }
 
         // Handle FloatingScore movement
+        /*
         void FloatingScoreHandler(eScoreEvent evt)
         {
             List<Vector2> fsPts;
@@ -461,6 +460,6 @@ namespace Pyramid
                     }
                     break;
             }
-        }
+        }*/
     }
 }
