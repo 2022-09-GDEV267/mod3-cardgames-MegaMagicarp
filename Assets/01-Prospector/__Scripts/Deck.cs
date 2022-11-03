@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Pyramid;
 
-public class Deck : MonoBehaviour {
+public class Deck : MonoBehaviour 
+{
 
-[Header("Set in Inspector")]
+	[Header("Set in Inspector")]
 	//Suits
 	public Sprite suitClub;
 	public Sprite suitDiamond;
@@ -37,15 +39,18 @@ public class Deck : MonoBehaviour {
 
 
 	// called by Prospector when it is ready
-	public void InitDeck(string deckXMLText) {
+	public void InitDeck(string deckXMLText) 
+	{
 		// from page 576
-		if( GameObject.Find("_Deck") == null) {
+		if( GameObject.Find("_Deck") == null) 
+		{
 			GameObject anchorGO = new GameObject("_Deck");
 			deckAnchor = anchorGO.transform;
 		}
 		
 		// init the Dictionary of suits
-		dictSuits = new Dictionary<string, Sprite>() {
+		dictSuits = new Dictionary<string, Sprite>() 
+		{
 			{"C", suitClub},
 			{"D", suitDiamond},
 			{"H", suitHeart},
@@ -80,7 +85,8 @@ public class Deck : MonoBehaviour {
 		// grab all decorators from the XML file
 		PT_XMLHashList xDecos = xmlr.xml["xml"][0]["decorator"];
 		Decorator deco;
-		for (int i=0; i<xDecos.Count; i++) {
+		for (int i=0; i<xDecos.Count; i++) 
+		{
 			// for each decorator in the XML, copy attributes and set up location and flip if needed
 			deco = new Decorator();
 			deco.type = xDecos[i].att ("type");
@@ -128,22 +134,26 @@ public class Deck : MonoBehaviour {
 		} // for i < xCardDefs.Count
 	} // ReadDeck
 	
-	public CardDefinition GetCardDefinitionByRank(int rnk) {
-		foreach(CardDefinition cd in cardDefs) {
-			if (cd.rank == rnk) {
+	public CardDefinition GetCardDefinitionByRank(int rnk) 
+	{
+		foreach(CardDefinition cd in cardDefs) 
+		{
+			if (cd.rank == rnk) 
+			{
 					return(cd);
 			}
 		} // foreach
 		return (null);
 	}//GetCardDefinitionByRank
 	
-	
 	public void MakeCards() {
 		// stub Add the code from page 577 here
 		cardNames = new List<string>();
 		string[] letters = new string[] {"C","D","H","S"};
-		foreach (string s in letters) {
-			for (int i =0; i<13; i++) {
+		foreach (string s in letters) 
+		{
+			for (int i =0; i<13; i++) 
+			{
 				cardNames.Add(s+(i+1));
 			}
 		}
@@ -167,7 +177,8 @@ public class Deck : MonoBehaviour {
 			card.suit = card.name[0].ToString();
 			card.rank = int.Parse (card.name.Substring (1));
 			
-			if (card.suit =="D" || card.suit == "H") {
+			if (card.suit =="D" || card.suit == "H") 
+			{
 				card.colS = "Red";
 				card.color = Color.red;
 			}
@@ -178,9 +189,11 @@ public class Deck : MonoBehaviour {
 			foreach (Decorator deco in decorators) {
 				tGO = Instantiate(prefabSprite) as GameObject;
 				tSR = tGO.GetComponent<SpriteRenderer>();
-				if (deco.type == "suit") {
+				if (deco.type == "suit") 
+				{
 					tSR.sprite = dictSuits[card.suit];
-				} else { // it is a rank
+				} else 
+				{ // it is a rank
 					tS = rankSprites[card.rank];
 					tSR.sprite = tS;
 					tSR.color = card.color;
@@ -253,9 +266,12 @@ public class Deck : MonoBehaviour {
 	} // makeCards
 	
 	//Find the proper face card
-	public Sprite GetFace(string faceS) {
-		foreach (Sprite tS in faceSprites) {
-			if (tS.name == faceS) {
+	public Sprite GetFace(string faceS) 
+	{
+		foreach (Sprite tS in faceSprites) 
+		{
+			if (tS.name == faceS) 
+			{
 				return (tS);
 			}
 		}//foreach	
@@ -279,12 +295,7 @@ public class Deck : MonoBehaviour {
 	 	}
 
 	 	oCards = tCards;
-
 	 	//because oCards is a ref parameter, the changes made are propogated back
 	 	//for ref paramters changes made in the function persist.
-
-
 	 }
-
-
-} // Deck class
+}

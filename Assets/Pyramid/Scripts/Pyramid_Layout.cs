@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pyramid;
 
 // The SlotDef class is not a subclass of MonoBehaviour, so it doesn't need
 // a separate C# file.
@@ -28,7 +29,7 @@ namespace Pyramid
         public PT_XMLHashtable xml; // This variable is for faster xml access
         public Vector2 multiplier; // The offset of the tableau's center
                                    // SlotDef references
-        public List<SlotDef> slotDefs; // All the SlotDefs for Row0-Row3
+        public List<SlotDef> slotDefs; // All the SlotDefs for Row0-Row6
         public SlotDef drawPile;
         public SlotDef discardPile;
         // This holds all of the possible names for the layers set by layerID
