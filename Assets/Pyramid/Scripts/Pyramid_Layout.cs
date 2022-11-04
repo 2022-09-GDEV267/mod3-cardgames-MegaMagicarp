@@ -32,6 +32,7 @@ namespace Pyramid
         public List<SlotDef> slotDefs; // All the SlotDefs for Row0-Row6
         public SlotDef drawPile;
         public SlotDef discardPile;
+        public SlotDef targetPile;
         // This holds all of the possible names for the layers set by layerID
         public string[] sortingLayerNames = new string[] { "Row0", "Row1", "Row2", "Row3", "Row4", "Row5", "Row6", "Discard", "Draw" };
 
@@ -89,6 +90,10 @@ namespace Pyramid
                             }
                         }
                         slotDefs.Add(tSD);
+                        break;
+
+                    case "target":
+                        targetPile = tSD;
                         break;
 
                     case "drawpile":

@@ -29,7 +29,7 @@ namespace Pyramid
         public Pyramid_Layout layout;
         public List<CardPyramid> drawPile;
         public Transform layoutAnchor;
-        public CardPyramid target;
+        public List<CardPyramid> targets;
         public List<CardPyramid> tableau;
         public List<CardPyramid> discardPile;
         //public FloatingScore fsRun;
@@ -155,8 +155,8 @@ namespace Pyramid
                 }
             }
 
-            // Set up the initial target card
-            MoveToTarget(Draw());
+            //// Set up the initial target card
+            //MoveToTarget(Draw());
 
             // Set up the Draw pile
             UpdateDrawPile();
@@ -220,16 +220,16 @@ namespace Pyramid
         void MoveToTarget(CardPyramid cd)
         {
             // If there is currently a target card, move it to discardPile
-            if (target != null) MoveToDiscard(target);
-            target = cd; // cd is the new target
+            //if (target != null) MoveToDiscard(target);
+            targets[0] = cd; // cd is the new target
             cd.state = ePyramidCardState.target;
             cd.transform.parent = layoutAnchor;
 
             // Move to the target position
             cd.transform.localPosition = new Vector3(
-                layout.multiplier.x * layout.discardPile.x,
-                layout.multiplier.y * layout.discardPile.y,
-                -layout.discardPile.layerID);
+                layout.multiplier.x * layout.targetPile.x,
+                layout.multiplier.y * layout.targetPile.y,
+                -layout.targetPile.layerID);
 
             cd.faceUp = true; // Make it face-up
 
@@ -277,7 +277,7 @@ namespace Pyramid
 
                 case ePyramidCardState.drawpile:
                     // Clicking any card in the drawPile will draw the next card
-                    MoveToDiscard(target); // Moves the target to the discardPile
+                    //MoveToDiscard(target); // Moves the target to the discardPile
                     MoveToTarget(Draw());  // Moves the next drawn card to the target
                     UpdateDrawPile();     // Restacks the drawPile
                     //ScoreManager.EVENT(eScoreEvent.draw);
@@ -293,7 +293,7 @@ namespace Pyramid
                         validMatch = false;
                     }
 
-                    if (!Add13(cd, target))
+                    if (!Add13(cd, targets[0]))
                     {
                         // If it's not an adjacent rank, it's not valid
                         validMatch = false;
@@ -331,7 +331,7 @@ namespace Pyramid
             // Check for remaining valid plays
             foreach (CardPyramid cd in tableau)
             {
-                if (Add13(cd, target))
+                if (Add13(cd, targets[0]))
                 {
                     // If there is a valid play, the game's not over
                     return;
