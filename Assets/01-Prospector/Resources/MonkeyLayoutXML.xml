@@ -1,0 +1,52 @@
+<xml>
+	<!-- This file holds info for laying out the Too Many Monkeys card game. -->
+	
+	<!-- The multiplier is multiplied by the x and y attributes below. -->
+	<!-- This determines how loose or tight the layout is. --> 
+	<multiplier x="1.25" y="1.5" />
+	
+	<!-- In the XML below, id is the number of the card -->
+	<!-- x and y set position -->
+	<!-- faceup is 1 if the card is face-up -->
+	<!-- layer sets the depth layer so cards overlap properly -->
+	
+	<!-- Layer0, Player 1s hand. -->
+	<slot id="0" x="" y="" faceup="0" layer="0" />
+	<slot id="1" x="" y="" faceup="0" layer="0" />
+	<slot id="2" x="" y="" faceup="0" layer="0" />
+	<slot id="3" x="" y="" faceup="0" layer="0" />
+	<slot id="4" x="" y="" faceup="0" layer="0" />
+	<slot id="5" x="" y="" faceup="0" layer="0" />
+	
+	<!-- Layer1, Player 2s hand. -->
+	<slot id="6" x=""  y="" faceup="0" layer="1" />
+	<slot id="7" x=""  y="" faceup="0" layer="1" />
+	<slot id="8" x=""  y="" faceup="0" layer="1" />
+	<slot id="9" x=""  y="" faceup="0" layer="1" />
+	<slot id="10" x="" y="" faceup="0" layer="1" />
+	<slot id="11" x="" y="" faceup="0" layer="1" />
+	
+	<!-- Layer2, Player 3s hand. -->
+	<slot id="12" x=""  y="" faceup="0" layer="2" />
+	<slot id="13" x=""  y="" faceup="0" layer="2" />
+	<slot id="14" x=""  y="" faceup="0" layer="2" />
+	<slot id="15" x=""  y="" faceup="0" layer="2" />
+	<slot id="16" x=""  y="" faceup="0" layer="2" />
+	<slot id="17" x=""  y="" faceup="0" layer="2" />
+	
+	<!-- Layer3, Player 4s hand. -->
+	<slot id="18" x="" y="" faceup="0" layer="3" />
+	<slot id="19" x="" y="" faceup="0" layer="3" />
+	<slot id="20" x="" y="" faceup="0" layer="3" />
+	<slot id="21" x="" y="" faceup="0" layer="3" />
+	<slot id="22" x="" y="" faceup="0" layer="3" />
+	<slot id="23" x="" y="" faceup="0" layer="3" />
+	
+	<!-- This positions the draw pile and staggers it -->
+	<slot type="drawpile" x="6" y="4" layer="4"/>
+	
+	<!-- This positions the discard pile and target card -->
+	<slot type="discardpile" x="0" y="1" layer="5"/>
+	
+</xml>
+	

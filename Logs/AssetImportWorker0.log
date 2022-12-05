@@ -191,3 +191,15 @@ Received Import Request.
   path: Assets/Too Many Monkeys/Scripts/MonkeySM.cs
   artifactKey: Guid(2673f6458205c4a4db0f8c73b5089bd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Too Many Monkeys/Scripts/MonkeySM.cs using Guid(2673f6458205c4a4db0f8c73b5089bd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '781d7a6a8e562a8bdba2ec3d3bdb3b99') in 0.005954 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 124.841697 seconds.
+  path: Assets/01-Prospector/Resources/LayoutXML 1.xml
+  artifactKey: Guid(1b14b93075e254f48944ea34b8244e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01-Prospector/Resources/LayoutXML 1.xml using Guid(1b14b93075e254f48944ea34b8244e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5246fff25010e8d56383f78df5fc2f07') in 0.045805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.802657 seconds.
+  path: Assets/01-Prospector/Resources/MonkeyLayoutXML.xml
+  artifactKey: Guid(1b14b93075e254f48944ea34b8244e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01-Prospector/Resources/MonkeyLayoutXML.xml using Guid(1b14b93075e254f48944ea34b8244e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b76aed2ca9028f3edb5dc95627c1f4e0') in 0.006107 seconds 
