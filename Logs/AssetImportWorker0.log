@@ -15,7 +15,7 @@ C:/Users/megam/OneDrive/Documents/GitHub/mod3-cardgames-MegaMagicarp
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59576
+58000
 Successfully changed project path to: C:/Users/megam/OneDrive/Documents/GitHub/mod3-cardgames-MegaMagicarp
 C:/Users/megam/OneDrive/Documents/GitHub/mod3-cardgames-MegaMagicarp
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/megam/OneDrive/Documents/GitHub/mod3-cardgames-MegaMagicarp
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 41.22 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 35.95 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.1.17f1 (2d349551e475)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.1.17f1/Editor/Data/Resources/UnitySubsystems
@@ -63,99 +63,99 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.1.17f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.1.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.1.17f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56660
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56572
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.17f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.17f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.013719 seconds.
+Registered in 0.160428 seconds.
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 35.32 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 30.68 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.924 seconds
+- Completed reload, in  4.832 seconds
 Domain Reload Profiling:
-	ReloadAssembly (924ms)
-		BeginReloadAssembly (117ms)
+	ReloadAssembly (4833ms)
+		BeginReloadAssembly (3394ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (639ms)
-			LoadAssemblies (115ms)
+		EndReloadAssembly (897ms)
+			LoadAssemblies (3399ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (183ms)
-				TypeCache.Initialize (182ms)
-					TypeCache.ScanAssembly (180ms)
-				ResolveRequiredComponents (1ms)
+			SetupTypeCache (576ms)
+				TypeCache.Initialize (575ms)
+					TypeCache.ScanAssembly (574ms)
+				ResolveRequiredComponents (0ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (32ms)
-			SetupLoadedEditorAssemblies (360ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (229ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (8ms)
-				RefreshPlugins (35ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (7ms)
+				RefreshPlugins (31ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (180ms)
-				ProcessInitializeOnLoadMethodAttributes (122ms)
+				ProcessInitializeOnLoadAttributes (130ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005835 seconds.
+Registered in 0.005867 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.187 seconds
+- Completed reload, in  4.263 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1188ms)
-		BeginReloadAssembly (137ms)
+	ReloadAssembly (4264ms)
+		BeginReloadAssembly (127ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (22ms)
-		EndReloadAssembly (906ms)
-			LoadAssemblies (93ms)
+			CreateAndSetChildDomain (23ms)
+		EndReloadAssembly (3987ms)
+			LoadAssemblies (1960ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (336ms)
-				TypeCache.Initialize (333ms)
-					TypeCache.ScanAssembly (327ms)
-				ResolveRequiredComponents (4ms)
+			SetupTypeCache (631ms)
+				TypeCache.Initialize (628ms)
+					TypeCache.ScanAssembly (625ms)
+				ResolveRequiredComponents (3ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (53ms)
-			SetupLoadedEditorAssemblies (371ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (1310ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
-				SetLoadedEditorAssemblies (7ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (6ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (63ms)
-				ProcessInitializeOnLoadAttributes (248ms)
-				ProcessInitializeOnLoadMethodAttributes (30ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (287ms)
+				ProcessInitializeOnLoadMethodAttributes (938ms)
 				AfterProcessingInitializeOnLoad (11ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.33 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 20 unused Assets / (49.9 KB). Loaded Objects now: 2179.
 Memory consumption went from 283.5 MB to 283.4 MB.
-Total: 3.775400 ms (FindLiveObjects: 0.176900 ms CreateObjectMapping: 0.086000 ms MarkObjects: 3.090300 ms  DeleteObjects: 0.421200 ms)
+Total: 2.625600 ms (FindLiveObjects: 0.156800 ms CreateObjectMapping: 0.074300 ms MarkObjects: 2.305700 ms  DeleteObjects: 0.087500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -169,37 +169,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 592826.581867 seconds.
-  path: Assets/Too Many Monkeys/Scripts/MCard.cs
-  artifactKey: Guid(011755c2b6edad84286f6f25902f4d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Too Many Monkeys/Scripts/MCard.cs using Guid(011755c2b6edad84286f6f25902f4d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea00338c4eed94f478a4a981e69c1545') in 0.223130 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 266.647217 seconds.
-  path: Assets/Too Many Monkeys/Scripts/MDeck.cs
-  artifactKey: Guid(670f605043ec25c46a8dd494876c9e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Too Many Monkeys/Scripts/MDeck.cs using Guid(670f605043ec25c46a8dd494876c9e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae1fdfb5be6ec76c0d51f3d131c87967') in 0.008495 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.050875 seconds.
-  path: Assets/Too Many Monkeys/Scripts/MLayout.cs
-  artifactKey: Guid(6f96e6bf76880ef488ae21051b1a9a7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Too Many Monkeys/Scripts/MLayout.cs using Guid(6f96e6bf76880ef488ae21051b1a9a7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '733d10ab69aa876fdfdf62347f470fc6') in 0.006637 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.470489 seconds.
-  path: Assets/Too Many Monkeys/Scripts/MonkeySM.cs
-  artifactKey: Guid(2673f6458205c4a4db0f8c73b5089bd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Too Many Monkeys/Scripts/MonkeySM.cs using Guid(2673f6458205c4a4db0f8c73b5089bd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '781d7a6a8e562a8bdba2ec3d3bdb3b99') in 0.005954 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 124.841697 seconds.
-  path: Assets/01-Prospector/Resources/LayoutXML 1.xml
-  artifactKey: Guid(1b14b93075e254f48944ea34b8244e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01-Prospector/Resources/LayoutXML 1.xml using Guid(1b14b93075e254f48944ea34b8244e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5246fff25010e8d56383f78df5fc2f07') in 0.045805 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 23.802657 seconds.
+  Time since last request: 837721.590631 seconds.
   path: Assets/01-Prospector/Resources/MonkeyLayoutXML.xml
   artifactKey: Guid(1b14b93075e254f48944ea34b8244e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01-Prospector/Resources/MonkeyLayoutXML.xml using Guid(1b14b93075e254f48944ea34b8244e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b76aed2ca9028f3edb5dc95627c1f4e0') in 0.006107 seconds 
+Start importing Assets/01-Prospector/Resources/MonkeyLayoutXML.xml using Guid(1b14b93075e254f48944ea34b8244e2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac2e0957ef2e24929ae4a8aed20779de') in 0.070722 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 278.115761 seconds.
+  path: Assets/Pyramid/Pyramid.unity
+  artifactKey: Guid(8b54f34bccfafdd439a73563c904b535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pyramid/Pyramid.unity using Guid(8b54f34bccfafdd439a73563c904b535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98a72d9f1379407a674f59d31fe30499') in 0.006697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.604846 seconds.
+  path: Assets/Too Many Monkeys/Monkeys.unity
+  artifactKey: Guid(188adbd3ea335f74ebf94c9dc1c0e454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Too Many Monkeys/Monkeys.unity using Guid(188adbd3ea335f74ebf94c9dc1c0e454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '309a17a0205d13c8377d6f1085fb4b5e') in 0.008298 seconds 
