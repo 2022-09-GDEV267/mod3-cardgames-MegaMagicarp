@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonkeySM : MonoBehaviour
+namespace Monkey
 {
-    // Start is called before the first frame update
-    void Start()
+    public class MonkeySM : MonoBehaviour
     {
-        
-    }
+        public MDeck deck;
+        public MLayout layout;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }

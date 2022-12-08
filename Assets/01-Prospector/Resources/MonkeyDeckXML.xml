@@ -1,0 +1,16 @@
+<xml>
+		<!-- A list of all cards that defines where pips are placed. -->
+	<card rank="1" face="Monkey_1" count="6"/>
+	<card rank="2" face="Monkey_2" count="6"/>
+	<card rank="3" face="Monkey_3" count="6"/>
+	<card rank="4" face="Monkey_4" count="6"/>
+	<card rank="5" face="Monkey_5" count="6"/>
+	<card rank="6" face="Monkey_6" count="6"/>
+	<card rank="7" face="Giraffe" count="3"/>
+	<card rank="8" face="Elephant" count="3"/>
+	<card rank="9" face="Wild" count="4"/>
+	<card rank="10" face="raccoon" count="3"/>
+	<card rank="11" face="Skip" count="4"/>
+	<card rank="12" face="DND" count="2"/>
+	
+</xml>
