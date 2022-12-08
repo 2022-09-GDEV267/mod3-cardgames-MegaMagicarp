@@ -21,8 +21,9 @@ namespace Monkey
         public List<string> cardNames;
         public List<Card> cards;
         public Transform deckAnchor;
+        private List<CardDefinition> cardDefs;
 
-        public void InitDeck(string deckXMLText)
+        public void InitDeck(string MonkeyDeckXMLText)
         {
             if (GameObject.Find("_Deck") == null)
             {
@@ -30,8 +31,31 @@ namespace Monkey
                 deckAnchor = anchorGO.transform;
             }
 
-            ReadDeck(deckXMLText);
+            ReadDeck(MonkeyDeckXMLText);
             MakeCards();
+        }
+
+        private void ReadDeck(string MonkeyDeckXMLText)
+        {
+            xmlr = new PT_XMLReader();
+            xmlr.Parse(MonkeyDeckXMLText);
+            cardDefs = new List<CardDefinition>();
+            PT_XMLHashList xCardDefs = xmlr.xml["xml"][0]["card"];
+
+            for (int i = 0; i < xCardDefs.Count; i++)
+            {
+                // for each carddef in the XML, copy attributes and set up in cDef
+                CardDefinition cDef = new CardDefinition();
+                cDef.rank = int.Parse(xCardDefs[i].att("rank"));
+
+                // if it's a face card, map the proper sprite
+                // foramt is ##A, where ## in 11, 12, 13 and A is letter indicating suit
+                if (xCardDefs[i].HasAtt("face"))
+                {
+                    cDef.face = xCardDefs[i].att("face");
+                }
+                cardDefs.Add(cDef);
+            }
         }
 
         private void MakeCards()
@@ -39,7 +63,7 @@ namespace Monkey
             throw new NotImplementedException();
         }
 
-        private void ReadDeck(string deckXMLText)
+        internal static void Shuffle(ref List<Card> cards)
         {
             throw new NotImplementedException();
         }
