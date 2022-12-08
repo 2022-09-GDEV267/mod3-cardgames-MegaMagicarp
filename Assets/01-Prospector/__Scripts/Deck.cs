@@ -146,7 +146,6 @@ public class Deck : MonoBehaviour
 	}//GetCardDefinitionByRank
 	
 	public void MakeCards() {
-		// stub Add the code from page 577 here
 		cardNames = new List<string>();
 		string[] letters = new string[] {"C","D","H","S"};
 		foreach (string s in letters) 

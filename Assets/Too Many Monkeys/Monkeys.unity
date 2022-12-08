@@ -414,6 +414,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670f605043ec25c46a8dd494876c9e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faceSprites: []
+  cardBack: {fileID: 0}
+  cardFront: {fileID: 0}
+  prefabSprite: {fileID: 0}
+  prefabCard: {fileID: 0}
+  xmlr:
+    xmlText: 
+  cardNames: []
+  cards: []
+  deckAnchor: {fileID: 0}
 --- !u!114 &1421425290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,3 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2673f6458205c4a4db0f8c73b5089bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: {fileID: 0}
+  layout: {fileID: 0}
+  MonkeyDeckXML: {fileID: 4900000, guid: 1a9d29bb7258f6540a38b71cb69a5564, type: 3}
+  MonkeyLayoutXML: {fileID: 4900000, guid: 1b14b93075e254f48944ea34b8244e2e, type: 3}

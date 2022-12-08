@@ -111,3 +111,11 @@ public class CardDefinition{
 	public List<Decorator>	
 					pips = new List<Decorator>();  // Pips Used
 }
+
+[System.Serializable]
+public class MCardDefinition
+{
+    public string face; //sprite to use for face cart
+    public int rank;
+    public int count;
+}

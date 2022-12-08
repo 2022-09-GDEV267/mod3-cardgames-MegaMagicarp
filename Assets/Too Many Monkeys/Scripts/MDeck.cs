@@ -21,7 +21,7 @@ namespace Monkey
         public List<string> cardNames;
         public List<Card> cards;
         public Transform deckAnchor;
-        private List<CardDefinition> cardDefs;
+        public List<MCardDefinition> cardDefs;
 
         public void InitDeck(string MonkeyDeckXMLText)
         {
@@ -39,17 +39,17 @@ namespace Monkey
         {
             xmlr = new PT_XMLReader();
             xmlr.Parse(MonkeyDeckXMLText);
-            cardDefs = new List<CardDefinition>();
+            cardDefs = new List<MCardDefinition>();
             PT_XMLHashList xCardDefs = xmlr.xml["xml"][0]["card"];
 
             for (int i = 0; i < xCardDefs.Count; i++)
             {
                 // for each carddef in the XML, copy attributes and set up in cDef
-                CardDefinition cDef = new CardDefinition();
+                MCardDefinition cDef = new MCardDefinition();
                 cDef.rank = int.Parse(xCardDefs[i].att("rank"));
+                cDef.count = int.Parse(xCardDefs[i].att("count"));
 
                 // if it's a face card, map the proper sprite
-                // foramt is ##A, where ## in 11, 12, 13 and A is letter indicating suit
                 if (xCardDefs[i].HasAtt("face"))
                 {
                     cDef.face = xCardDefs[i].att("face");
@@ -60,12 +60,82 @@ namespace Monkey
 
         private void MakeCards()
         {
-            throw new NotImplementedException();
+            // list of all Cards
+            cards = new List<Card>();
+
+            // temp variables
+            Sprite tS = null;
+            GameObject tGO = null;
+            SpriteRenderer tSR = null;
+
+            for (int i = 0; i < cardDefs[0].count; i++)
+            {
+                GameObject cgo = Instantiate(prefabCard) as GameObject;
+                cgo.transform.parent = deckAnchor;
+                Card card = cgo.GetComponent<Card>();
+                card.name = cardDefs[0].face + "_" + i;
+                card.rank = cardDefs[0].rank;
+
+                cards.Add(card);
+            }
+
+            //    cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 4, 0);
+
+            //    card.suit = card.name[0].ToString();
+
+            //    //if (card.suit == "D" || card.suit == "H")
+            //    //{
+            //    //    card.colS = "Red";
+            //    //    card.color = Color.red;
+            //    //}
+
+            //    card.def = GetCardDefinitionByRank(card.rank);
+
+            //    //Handle face cards
+            //    if (card.def.face != "")
+            //    {
+            //        tGO = Instantiate(prefabSprite) as GameObject;
+            //        tSR = tGO.GetComponent<SpriteRenderer>();
+
+            //        tS = GetFace(card.def.face + card.suit);
+            //        tSR.sprite = tS;
+            //        tSR.sortingOrder = 1;
+            //        tGO.transform.parent = card.transform;
+            //        tGO.transform.localPosition = Vector3.zero;  // slap it smack dab in the middle
+            //        tGO.name = "face";
+            //    }
+
+            //    tGO = Instantiate(prefabSprite) as GameObject;
+            //    tSR = tGO.GetComponent<SpriteRenderer>();
+            //    tSR.sprite = cardBack;
+            //    tGO.transform.SetParent(card.transform);
+            //    tGO.transform.localPosition = Vector3.zero;
+            //    tSR.sortingOrder = 2;
+            //    tGO.name = "back";
+            //    card.back = tGO;
+            //    card.faceUp = false;
         }
+    
 
         internal static void Shuffle(ref List<Card> cards)
         {
-            throw new NotImplementedException();
+            //List<Card> tCards = new List<Card>();
+
+            //int ndx;   // which card to move
+
+            //tCards = new List<Card>();
+
+            //while (oCards.Count > 0)
+            //{
+            //    // find a random card, add it to shuffled list and remove from original deck
+            //    ndx = Random.Range(0, oCards.Count);
+            //    tCards.Add(oCards[ndx]);
+            //    oCards.RemoveAt(ndx);
+            //}
+
+            //oCards = tCards;
+            ////because oCards is a ref parameter, the changes made are propogated back
+            ////for ref paramters changes made in the function persist.
         }
     }
 }
