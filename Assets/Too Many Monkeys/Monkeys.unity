@@ -235,7 +235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &988459808
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -414,16 +414,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670f605043ec25c46a8dd494876c9e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceSprites: []
+  faceSprites:
+  - {fileID: 21300000, guid: 7dceda8410a22de49ae11ea3d86194db, type: 3}
+  - {fileID: 21300000, guid: 2e32fbc3111452948a63fbcc57fbdaaa, type: 3}
+  - {fileID: 21300000, guid: fd4e514be3b8f8a41880e2dfc80a08ee, type: 3}
+  - {fileID: 21300000, guid: 410854451fcc46e43863617520b16b96, type: 3}
+  - {fileID: 21300000, guid: 4f7142ea01c7c834c8a8142b73e28d42, type: 3}
+  - {fileID: 21300000, guid: d6b0e5d695f16c340a00c89a7b6d7ec3, type: 3}
   cardBack: {fileID: 0}
-  cardFront: {fileID: 0}
-  prefabSprite: {fileID: 0}
-  prefabCard: {fileID: 0}
+  cardFront: {fileID: 21300000, guid: aa5652a421c3f3f4eaada85f59f3245b, type: 3}
+  prefabSprite: {fileID: 100000, guid: ec7bc014315b75641a0b764221dc8ea9, type: 3}
+  prefabCard: {fileID: 100000, guid: eba0ddff88d16cd4bb02ac72d71c6f5a, type: 3}
   xmlr:
     xmlText: 
   cardNames: []
   cards: []
   deckAnchor: {fileID: 0}
+  cardDefs: []
 --- !u!114 &1421425290
 MonoBehaviour:
   m_ObjectHideFlags: 0

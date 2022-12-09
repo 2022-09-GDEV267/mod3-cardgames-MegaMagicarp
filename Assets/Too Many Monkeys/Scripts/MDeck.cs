@@ -75,19 +75,48 @@ namespace Monkey
                 Card card = cgo.GetComponent<Card>();
                 card.name = cardDefs[0].face + "_" + i;
                 card.rank = cardDefs[0].rank;
+                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 4, 0);
+
+                //if (card.def.face != "")
+                {
+                    tGO = Instantiate(prefabSprite) as GameObject;
+                    tSR = tGO.GetComponent<SpriteRenderer>();
+
+                    //tS = GetFace(card.def.face + card.suit);
+                    tSR.sprite = faceSprites[0];
+                    tSR.sortingOrder = 1;
+                    tGO.transform.parent = cgo.transform;
+                    tGO.transform.localPosition = Vector3.zero;
+                    tGO.name = "face";
+                }
 
                 cards.Add(card);
             }
 
-            //    cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 4, 0);
+            for (int i = 0; i < cardDefs[1].count; i++)
+            {
+                GameObject cgo = Instantiate(prefabCard) as GameObject;
+                cgo.transform.parent = deckAnchor;
+                Card card = cgo.GetComponent<Card>();
+                card.name = cardDefs[1].face + "_" + i;
+                card.rank = cardDefs[1].rank;
+                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 4, 0);
 
-            //    card.suit = card.name[0].ToString();
+                //if (card.def.face != "")
+                {
+                    tGO = Instantiate(prefabSprite) as GameObject;
+                    tSR = tGO.GetComponent<SpriteRenderer>();
 
-            //    //if (card.suit == "D" || card.suit == "H")
-            //    //{
-            //    //    card.colS = "Red";
-            //    //    card.color = Color.red;
-            //    //}
+                    //tS = GetFace(card.def.face + card.suit);
+                    tSR.sprite = faceSprites[1];
+                    tSR.sortingOrder = 1;
+                    tGO.transform.parent = cgo.transform;
+                    tGO.transform.localPosition = Vector3.zero;
+                    tGO.name = "face";
+                }
+
+                cards.Add(card);
+            }
 
             //    card.def = GetCardDefinitionByRank(card.rank);
 
@@ -101,7 +130,7 @@ namespace Monkey
             //        tSR.sprite = tS;
             //        tSR.sortingOrder = 1;
             //        tGO.transform.parent = card.transform;
-            //        tGO.transform.localPosition = Vector3.zero;  // slap it smack dab in the middle
+            //        tGO.transform.localPosition = Vector3.zero; 
             //        tGO.name = "face";
             //    }
 
