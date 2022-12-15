@@ -75,7 +75,7 @@ namespace Monkey
                 Card card = cgo.GetComponent<Card>();
                 card.name = cardDefs[0].face + "_" + i;
                 card.rank = cardDefs[0].rank;
-                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 4, 0);
+                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 3, 0);
 
                 //if (card.def.face != "")
                 {
@@ -100,7 +100,7 @@ namespace Monkey
                 Card card = cgo.GetComponent<Card>();
                 card.name = cardDefs[1].face + "_" + i;
                 card.rank = cardDefs[1].rank;
-                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 4, 0);
+                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 4, 1);
 
                 //if (card.def.face != "")
                 {
@@ -117,6 +117,107 @@ namespace Monkey
 
                 cards.Add(card);
             }
+
+            for (int i = 0; i < cardDefs[2].count; i++)
+            {
+                GameObject cgo = Instantiate(prefabCard) as GameObject;
+                cgo.transform.parent = deckAnchor;
+                Card card = cgo.GetComponent<Card>();
+                card.name = cardDefs[2].face + "_" + i;
+                card.rank = cardDefs[2].rank;
+                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 5, 2);
+
+                //if (card.def.face != "")
+                {
+                    tGO = Instantiate(prefabSprite) as GameObject;
+                    tSR = tGO.GetComponent<SpriteRenderer>();
+
+                    //tS = GetFace(card.def.face + card.suit);
+                    tSR.sprite = faceSprites[2];
+                    tSR.sortingOrder = 1;
+                    tGO.transform.parent = cgo.transform;
+                    tGO.transform.localPosition = Vector3.zero;
+                    tGO.name = "face";
+                }
+
+                cards.Add(card);
+            }
+
+            for (int i = 0; i < cardDefs[3].count; i++)
+            {
+                GameObject cgo = Instantiate(prefabCard) as GameObject;
+                cgo.transform.parent = deckAnchor;
+                Card card = cgo.GetComponent<Card>();
+                card.name = cardDefs[3].face + "_" + i;
+                card.rank = cardDefs[3].rank;
+                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 6, 3);
+
+                //if (card.def.face != "")
+                {
+                    tGO = Instantiate(prefabSprite) as GameObject;
+                    tSR = tGO.GetComponent<SpriteRenderer>();
+
+                    //tS = GetFace(card.def.face + card.suit);
+                    tSR.sprite = faceSprites[3];
+                    tSR.sortingOrder = 1;
+                    tGO.transform.parent = cgo.transform;
+                    tGO.transform.localPosition = Vector3.zero;
+                    tGO.name = "face";
+                }
+
+                cards.Add(card);
+            }
+
+            for (int i = 0; i < cardDefs[4].count; i++)
+            {
+                GameObject cgo = Instantiate(prefabCard) as GameObject;
+                cgo.transform.parent = deckAnchor;
+                Card card = cgo.GetComponent<Card>();
+                card.name = cardDefs[4].face + "_" + i;
+                card.rank = cardDefs[4].rank;
+                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 6, 4);
+
+                //if (card.def.face != "")
+                {
+                    tGO = Instantiate(prefabSprite) as GameObject;
+                    tSR = tGO.GetComponent<SpriteRenderer>();
+
+                    //tS = GetFace(card.def.face + card.suit);
+                    tSR.sprite = faceSprites[4];
+                    tSR.sortingOrder = 1;
+                    tGO.transform.parent = cgo.transform;
+                    tGO.transform.localPosition = Vector3.zero;
+                    tGO.name = "face";
+                }
+
+                cards.Add(card);
+            }
+
+            for (int i = 0; i < cardDefs[5].count; i++)
+            {
+                GameObject cgo = Instantiate(prefabCard) as GameObject;
+                cgo.transform.parent = deckAnchor;
+                Card card = cgo.GetComponent<Card>();
+                card.name = cardDefs[5].face + "_" + i;
+                card.rank = cardDefs[5].rank;
+                cgo.transform.localPosition = new Vector3(i % 13 * 3, i / 13 * 6, 5);
+
+                //if (card.def.face != "")
+                {
+                    tGO = Instantiate(prefabSprite) as GameObject;
+                    tSR = tGO.GetComponent<SpriteRenderer>();
+
+                    //tS = GetFace(card.def.face + card.suit);
+                    tSR.sprite = faceSprites[5];
+                    tSR.sortingOrder = 1;
+                    tGO.transform.parent = cgo.transform;
+                    tGO.transform.localPosition = Vector3.zero;
+                    tGO.name = "face";
+                }
+
+                cards.Add(card);
+            }
+
 
             //    card.def = GetCardDefinitionByRank(card.rank);
 
